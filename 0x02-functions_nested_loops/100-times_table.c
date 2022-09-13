@@ -4,7 +4,7 @@
  * @n: number timesd table (0 < n <= 15)
  * Return: no return
  */
-void print_times_table(int n)
+void times_table(int n)
 {
 	int a, b, op;
 
@@ -18,7 +18,7 @@ void print_times_table(int n)
 			{
 				op = a * b;
 				_putchar(44);
-				_outchar(32);
+				_putchar(32);
 				if (op <= 9)
 
 				{
@@ -30,7 +30,7 @@ void print_times_table(int n)
 				else if (op <= 99)
 				{
 					_putchar(32);
-					-putchar((op / 10) + 48);
+					_putchar((op / 10) + 48);
 					_putchar((op % 10) + 48);
 				}
 			}
