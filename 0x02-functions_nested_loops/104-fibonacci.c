@@ -17,7 +17,7 @@ int main(void)
 		{
 			hold1 = (bk1 + bk2) / LARGEST;
 			hold2 = (bk1 + bk2) % LARGEST;
-			hold3 = fr1 + fr2 +hold1;
+			hold3 = fr1 + fr2 + hold1;
 			fr1 = fr2, fr2 = hold3;
 			bk1 = bk2, bk2 = hold2;
 			printf("%lu%010lu", fr2, bk2);
@@ -26,10 +26,11 @@ int main(void)
 		{
 			hold2 = bk1 + bk2;
 			bk1 = bk2, bk2 = hold2;
-			printf("%lu",bk2);
+			printf("%lu", bk2);
 		}
 		if (count != 97)
 			printf(",");
+		printf(" ");
 	}
 	printf("\n");
 	return (0);
