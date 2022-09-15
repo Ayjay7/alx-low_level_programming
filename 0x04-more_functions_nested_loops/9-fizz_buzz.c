@@ -2,33 +2,31 @@
 
 /**
  * main - program that prints either
- * or Fizz or Buzz or FizzBuzz
- *
+ * Fizz or Buzz or FizzBuzz
  *
  * Return: 0
  */
-int min(void)
+int main(void)
 {
-	int i,
+	int i;
 
-	    while (i++ < 100)
+	while (i++ < 100)
+		if ((i % 3 == 0) && (i % 5 == 0))
+			printf("FizzBuzz");
 
-		    if ((i % 3 == 0) && (i % 5 == 0))
-			    printf("FizzBuzz");
+		else if ((i % 3) == 0)
+			printf("Fizz");
 
-		    else if ((i % 3) == 0)
-			    printf("Fizz");
+		else if ((i % 5) == 0)
+		{
+			if (i != 100)
+				printf("Buzz");
 
-		    else if ((i % 5) == 0)
-		    {
-			    if (i != 100)
-				    printf("Buzz");
-
-			    else
-				    printf("Buzz");
-		    }
-		    else
-			    printf("%d", i);
+			else
+				printf("Buzz");
+		}
+		else
+			printf("%d", i);
 
 	printf("\n");
 	return (0);
