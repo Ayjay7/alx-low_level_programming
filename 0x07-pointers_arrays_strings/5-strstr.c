@@ -4,20 +4,26 @@
  * _strstr - find substring in string
  * @haystack: where find
  * @needle: to find
- * Return: start first match
+ * Return: 0
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j;
+	char *str1, *str2; /*Declaring variable*/
 
-	for (; haystack[i]; i++)
+	while (*haystack != '\0')
 	{
-		for (j = 0; needle[i] && haystack[i + j] == needle[j]; j++)
-		{
-		}
+		str1 = haystack; /*values*/
+		str2 = needle;
 
-		if (needle[j] == '\0')
-			return (haystack + i)
+		/*Star WHILE*/
+		while (*haystack != '\0' && *str2 != '\0' && *haystack == *str2)
+		{
+			haystack++;
+			str2++;
+		}
+		if (*str2 == '\0')
+			return (str1);
+		haystack = str1 + 1;
 	}
-	return (NULL);
+	return (0);
 }
