@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stlib.h>
 /**
@@ -6,20 +7,17 @@
  * @argv: The arguements' values
  * Return: Always 0 (Success)
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int n, ex;
-	ex = 0;
+	int a, b;
 
-	if (argc != 3)
+	if (argc == 3)
 	{
-		printf("%s\n", "Error");
-		ex = 1;
+		a = atoi(argv[1]);
+		b = atoi(argv[2]);
+		printf("%d\n", a * b);
+		return (0);
 	}
-	else
-	{
-		n = atoi(argv[1]) * atoi(argv[2]);
-		printf("%i\n", n);
-	}
-	return (ex);
+	printf("Error\n");
+	return (1);
 }
