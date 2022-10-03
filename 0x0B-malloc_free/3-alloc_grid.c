@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * **alloc_grid - create a matrix using malloc
+ * alloc_grid - create a matrix using malloc
  * @width: width of matrix
  * @height: height of the matrix
  *
@@ -25,16 +25,16 @@ int **alloc_grid(int width, int height)
 			free(p);
 			return (NULL);
 		}
-		for (j = 0; i < height; i++)
+		for (i = 0; i < height; i++)
 		{
-			p[i] = (int *) malloc(width * sizeof(int));
-			if (!p[i])
-			{
-				for (j = 0; j <= i; j++)
-					free(p[j]);
-				free(p);
-				return (NULL);
-			}
+			p[i] = (int *) malloc(width * sizeof(int))
+				if (!p[i])
+				{
+					for (j = 0; j <= i; j++)
+						free(p[j]);
+					free(p);
+					return (NULL);
+				}
 		}
 		for (a = 0; a < height; a++)
 		{
@@ -42,7 +42,6 @@ int **alloc_grid(int width, int height)
 			{
 				p[a][b] = 0;
 			}
-
 		}
 		return (p);
 	}
