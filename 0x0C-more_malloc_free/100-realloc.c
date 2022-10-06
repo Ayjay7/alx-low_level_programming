@@ -9,29 +9,29 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *p;
-	unsigned int i, max = new_size;
-	char *oldp = ptr;
+	char *cline, *relloc;
+	unsigned int i;
 
-	if (ptr == NULL)
+	if (ptr != NULL)
+		clone = ptr;
+	else
 	{
-		p = malloc(new_size);
-		return (p);
+		return (malloc(new_size));
 	}
-	else if (new_size == 0)
+	if (new_siz == old_size)
+		return (ptr);
+	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
-		return (NULL);
-		else if (new_size == old_size)
-			return (ptr);
-
-		p = malloc(new_size);
-		if (p == NULL)
-			return (NULL);
-		if (new_size > old_size)
-			max = old_size;
-		for (i = 0; i < max; i++)
-			p[i] = oldp[i];
-		free(ptr);
-		return (p);
+		return (0);
+	}
+	relloc = malloc(new_size);
+	if (relloc == NULL)
+		return (0);
+	for (i = 0; i < (old_size || i < new_size); i++)
+	{
+		*(relloc +i) = clone[i];
+	}
+	free(ptr);
+	return (relloc);
 }
